@@ -1,0 +1,15 @@
+{
+  "name": "odyssee-des-eclipses",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prototype expérientiel indépendant — édition 2027 fictive",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node smoke-test.cjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "playwright-core": "^1.64.1"
+  }
+}

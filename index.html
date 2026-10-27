@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1114">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1114'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%23edbb68'/%3E%3Cellipse cx='32' cy='32' rx='28' ry='9' fill='none' stroke='%23edbb68' transform='rotate(-35 32 32)'/%3E%3C/svg%3E">
+  <meta name="description" content="L’Odyssée des Éclipses — concept indépendant et non officiel pour une édition anniversaire 2027 entièrement fictive inspirée du Cirque du Soleil.">
+  <title>L’Odyssée des Éclipses — 2027</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#experience" data-route="experience" aria-label="L’Odyssée des Éclipses, accueil">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="10"/><ellipse cx="20" cy="20" rx="19" ry="6" transform="rotate(-35 20 20)"/></svg>
+      <span>L’ODYSSÉE<br>DES ÉCLIPSES</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="#experience" data-route="experience" class="nav-link active"><span>01</span> La scène</a>
+      <a href="#recit" data-route="recit" class="nav-link"><span>02</span> Le récit</a>
+      <a href="#programme" data-route="programme" class="nav-link"><span>03</span> Infos pratiques</a>
+    </nav>
+    <div class="header-actions">
+      <button class="sound-button" id="sound-toggle" aria-pressed="false" aria-label="Activer l’ambiance sonore">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4Z"/><path class="sound-waves" d="M16 9c1.5 1.7 1.5 4.3 0 6M19 6c3.2 3.3 3.2 8.7 0 12"/></svg>
+        <span>Son off</span>
+      </button>
+      <span class="edition">ÉDITION FICTIVE · 2027</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="view active" id="experience" aria-labelledby="experience-title">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> UNE CRÉATION ORIGINALE · 2027</p>
+          <h1 tabindex="-1" id="experience-title">QUAND LE CIEL<br><em>S’ÉVEILLE.</em></h1>
+          <p class="intro">Et si la gravité n’était qu’un souvenir&nbsp;?<br>Composez un instant suspendu entre lumière,<br class="desktop-break"> mouvement et poésie.</p>
+          <div class="hero-actions">
+            <button class="primary-button" id="awaken">Faire naître la lumière <span aria-hidden="true">↗</span></button>
+            <button class="text-button" data-go="recit">Ou écouter le récit <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="interaction-note"><span class="mouse-icon" aria-hidden="true"></span> Déplacez l’astre. Changez la chorégraphie.</p>
+        </div>
+
+        <div class="stage-wrap">
+          <div class="stage-label"><span id="act-number">ACTE I</span><span id="act-name">L’ÉVEIL</span></div>
+          <div class="stage" id="stage">
+            <canvas id="sky" aria-hidden="true"></canvas>
+            <div class="orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="horizon" aria-hidden="true"></div>
+            <div class="performer" id="performer" aria-hidden="true">
+              <svg viewBox="0 0 240 330"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path class="body-line" d="M123 67C97 92 98 132 122 154C145 176 139 216 109 252"/><path d="M116 82C95 68 80 44 82 22M121 150C89 164 65 153 43 130M121 154C152 142 179 116 197 87M109 252C86 270 69 290 60 315M109 252C139 259 162 279 179 308"/><circle cx="130" cy="49" r="15"/><path class="silk" d="M48 0C61 66 37 102 43 130C48 159 74 181 66 217M193 0C184 38 204 58 197 87C189 118 159 126 153 152"/></g></svg>
+            </div>
+            <button class="sun-handle" id="sun-handle" aria-label="Astre lumineux. Utilisez les flèches du clavier pour le déplacer et transformer la scène." aria-describedby="stage-help"><span></span></button>
+            <div class="stage-coordinate" aria-hidden="true">N 45°30′ &nbsp; / &nbsp; 2027</div>
+            <p class="sr-only" id="stage-help">Trois actes et trois forces permettent de modifier la scène. Toutes les informations sont aussi disponibles sans animation dans Infos pratiques.</p>
+          </div>
+          <div class="act-switcher" role="group" aria-label="Choisir un acte">
+            <button class="act active" data-act="0" aria-pressed="true"><span>01</span><strong>L’éveil</strong><small>La première lueur</small></button>
+            <button class="act" data-act="1" aria-pressed="false"><span>02</span><strong>L’envol</strong><small>Apprivoiser l’air</small></button>
+            <button class="act" data-act="2" aria-pressed="false"><span>03</span><strong>La rencontre</strong><small>Devenir constellation</small></button>
+          </div>
+        </div>
+      </div>
+      <footer class="scene-footer">
+        <p>UN HOMMAGE FICTIF À 40 ANS D’ÉMERVEILLEMENT</p>
+        <div class="forces" role="group" aria-label="Forces chorégraphiques">
+          <button data-force="light" class="active" aria-pressed="true"><i></i>Lumière</button>
+          <button data-force="gravity" aria-pressed="false"><i></i>Gravité</button>
+          <button data-force="motion" aria-pressed="false"><i></i>Élan</button>
+        </div>
+        <a href="#a-propos" data-route="a-propos">À propos du concept <span aria-hidden="true">↗</span></a>
+      </footer>
+    </section>
+
+    <section class="view story-view" id="recit" aria-labelledby="story-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">LE CARNET DES ÉCHOS · EXPÉRIENCE NARRATIVE</p>
+        <h2 tabindex="-1" id="story-title">Chaque geste<br><em>laisse une trace.</em></h2>
+        <p>Trois choix. Trois souvenirs. Composez votre propre écho de cette nuit imaginaire.</p>
+      </div>
+      <div class="story-layout">
+        <div class="story-visual" aria-hidden="true">
+          <div class="echo-orbit"><span id="echo-symbol">✦</span></div>
+          <p id="echo-number">ÉCHO 01 / 03</p>
+          <blockquote id="story-quote">« Avant le premier geste, il y a un silence qui appartient à tout le monde. »</blockquote>
+        </div>
+        <div class="story-game" aria-live="polite">
+          <div class="story-progress" aria-hidden="true"><i class="active"></i><i></i><i></i></div>
+          <p class="story-chapter" id="story-chapter">CHAPITRE I — LE SEUIL</p>
+          <h3 id="story-question">Le rideau respire. Par où entrez-vous&nbsp;?</h3>
+          <div class="story-choices" id="story-choices"></div>
+          <button class="text-button" id="story-reset" hidden>Recommencer mon récit ↺</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="view practical-view" id="programme" aria-labelledby="program-title" hidden>
+      <div class="section-heading practical-heading">
+        <div><p class="eyebrow">L’ESSENTIEL, SANS DÉTOUR</p><h2 tabindex="-1" id="program-title">Votre nuit<br><em>commence ici.</em></h2></div>
+        <p>Trois escales imaginaires. Une création pensée pour être vécue, jamais réservée pour de vrai.</p>
+      </div>
+      <div class="notice"><span>ⓘ</span><strong>Prototype de démonstration</strong> — Dates, lieux, tarifs et disponibilités entièrement fictifs.</div>
+      <div class="show-list">
+        <article class="show-card">
+          <div class="show-date"><strong>12—20</strong><span>JUIN 2027</span></div><div class="show-city"><span>ESCALE 01</span><h3>Montréal</h3><p>Quai des Étoiles · Lieu imaginaire</p></div><div class="show-details"><span>GRANDE CRÉATION</span><p>2 h 10, entracte compris<br>Dès 6 ans · 45 $ fictifs</p></div><button class="round-button book-button" data-show="Montréal" aria-label="Simuler une réservation pour Montréal">↗</button>
+        </article>
+        <article class="show-card">
+          <div class="show-date"><strong>03—18</strong><span>JUIL. 2027</span></div><div class="show-city"><span>ESCALE 02</span><h3>Paris</h3><p>Plaine des Merveilles · Lieu imaginaire</p></div><div class="show-details"><span>GRANDE CRÉATION</span><p>2 h 10, entracte compris<br>Dès 6 ans · 52 € fictifs</p></div><button class="round-button book-button" data-show="Paris" aria-label="Simuler une réservation pour Paris">↗</button>
+        </article>
+        <article class="show-card">
+          <div class="show-date"><strong>09—26</strong><span>SEPT. 2027</span></div><div class="show-city"><span>ESCALE 03</span><h3>Tokyo</h3><p>Jardin de l’Éclipse · Lieu imaginaire</p></div><div class="show-details"><span>CRÉATION CRÉPUSCULAIRE</span><p>1 h 35, sans entracte<br>Dès 6 ans · 6 000 ¥ fictifs</p></div><button class="round-button book-button" data-show="Tokyo" aria-label="Simuler une réservation pour Tokyo">↗</button>
+        </article>
+      </div>
+      <div class="practical-grid">
+        <article><span class="grid-number">01 / VENIR</span><h3>Le chemin fait partie du spectacle.</h3><p>Les trois lieux sont fictifs. Pour ce prototype, imaginez une arrivée en transports collectifs 45 minutes avant la représentation.</p></article>
+        <article><span class="grid-number">02 / VIVRE</span><h3>La poésie, sans écran.</h3><p>Pas de flash ni d’enregistrement dans cette proposition. Vestiaire, eau et espaces de repos imaginés sur chaque site.</p></article>
+        <article><span class="grid-number">03 / ACCÉDER</span><h3>Une expérience pour chacun.</h3><p>Concept prévoyant places PMR, audiodescription à certaines dates, espaces calmes et accès prioritaire. Services fictifs.</p></article>
+      </div>
+      <div class="faq"><h3>Questions fréquentes</h3><details><summary>Puis-je acheter un billet pour 2027&nbsp;?<span>+</span></summary><p>Non. Il n’existe aucune billetterie pour ce concept. La réservation proposée est uniquement une simulation locale, sans transaction ni collecte de données.</p></details><details><summary>Est-ce une annonce du Cirque du Soleil&nbsp;?<span>+</span></summary><p>Non. C’est un exercice créatif indépendant et non officiel. L’organisation n’a ni commandé, ni validé, ni produit ce prototype.</p></details><details><summary>Le spectacle existe-t-il vraiment&nbsp;?<span>+</span></summary><p>Non. L’Odyssée des Éclipses, ses trois escales, ses personnages et ses dates sont entièrement inventés pour ce challenge.</p></details></div>
+    </section>
+
+    <section class="view about-view" id="a-propos" aria-labelledby="about-title" hidden>
+      <div class="section-heading"><p class="eyebrow">NOTE D’INTENTION</p><h2 tabindex="-1" id="about-title">Inventer un souvenir.<br><em>Pas une annonce.</em></h2></div>
+      <div class="about-content"><p>Ce prototype réinterprète librement les notions de prouesse physique, de métamorphose et d’émerveillement associées au Cirque du Soleil. Il n’utilise ni logo, ni photographie, ni musique, ni contenu propriétaire de l’organisation.</p><p>La scène céleste transforme le visiteur en metteur en lumière. Le Carnet des Échos propose, à l’inverse, une exploration intime par les mots et les choix. Le mode pratique rend toutes les informations accessibles sans participation.</p><div class="notice"><strong>Concept indépendant et non officiel. Édition anniversaire 2027 entièrement fictive.</strong></div><a class="primary-button" href="https://www.cirquedusoleil.com" target="_blank" rel="noopener noreferrer">Visiter le site officiel <span>↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="global-footer"><p>CONCEPT INDÉPENDANT &amp; NON OFFICIEL · ÉDITION ANNIVERSAIRE 2027 ENTIÈREMENT FICTIVE</p><span>EXPÉRIENCE 01 — 2026</span></footer>
+
+  <dialog id="booking-dialog" aria-labelledby="booking-title">
+    <button class="dialog-close" aria-label="Fermer">×</button>
+    <p class="eyebrow">SIMULATION · AUCUN PAIEMENT</p><h2 tabindex="-1" id="booking-title">Votre place<br><em>dans le ciel.</em></h2>
+    <p id="booking-city"></p><label for="ticket-count">Nombre de places fictives</label><select id="ticket-count"><option value="1">1 place</option><option value="2">2 places</option><option value="3">3 places</option><option value="4">4 places</option></select>
+    <button class="primary-button" id="simulate-booking">Simuler ma réservation <span>↗</span></button>
+    <p class="dialog-note">Aucune donnée personnelle, aucun paiement, aucune réservation réelle.</p><div id="booking-result" aria-live="polite"></div>
+  </dialog>
+</body>
+</html>
