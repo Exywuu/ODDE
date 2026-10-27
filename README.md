@@ -1,5 +1,7 @@
 # Daybreak — L’Odyssée des Éclipses
 
+**[Découvrir la démonstration en ligne →](https://exywuu.github.io/ODDE/)**
+
 **Nom de code collectif : Daybreak**  
 **Projet : L’Odyssée des Éclipses — Live Experience 2027, Creative Web Experience Challenge 01**  
 **Réalisation : Kimi K3.1 Pro, assistant IA exécuté dans Qoder Desktop.**
